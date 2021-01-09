@@ -1,9 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import react, {useState, useEffect} from 'react';
+import react, {useState, useEffect, useRef} from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import { withStyles } from '@material-ui/core/styles';
+
+import { useSpring, config } from "react-spring";
 
 
 function App() {
@@ -12,16 +15,22 @@ function App() {
 
   const [messageList, setMessageList] = useState([]);
 
+  const messageBoxStyle = {
+    backgroundColor: "#E7E7E7",
+    width: '80%',
+    margin: '0 25px'
+  }
+
 
   const onChangeInput = (e)=>{
     setValue(e.target.value)
   }
 
   const onClickButton = ()=>{
-    if(value != "")
+    if(value !== null && value !== '')
     {
       setMessageList([...messageList, {'message':value}])
-      setValue("");
+      setValue('');
     }
 
   }
@@ -31,6 +40,9 @@ function App() {
       onClickButton();
     }
   }
+
+
+ 
 
   return (
     
@@ -52,17 +64,12 @@ function App() {
         }
         </div>
         <div className="message-input">
-          <textarea cols='2' onChange={onChangeInput} onKeyPress={handleKeyPress} value={value}></textarea>
+          <TextField variant="outlined"  style={messageBoxStyle} inputProps={{style: {fontSize: 15}}} onChange={onChangeInput} onKeyPress={handleKeyPress} value={value} size="small"></TextField>
           <button onClick={onClickButton}>submit</button>
         </div>
       </div>
 
 
-
- 
-
-
-      
     </div>
   );
 }
