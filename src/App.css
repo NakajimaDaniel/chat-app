@@ -83,10 +83,12 @@
 
 .room-name{
     color: #676767;
+    padding-left: 10px;
 }
 
 .room-password{
     color: #676767;
+    padding-left: 10px;
 }
 
 .divider{
@@ -96,6 +98,23 @@
     width: 20vh;
     margin: 0 auto;
 }
+
+.participants-wrap{
+    padding-top: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center; 
+}
+
+.user-img{
+    padding-left: 10px;
+}
+
+.user-name{
+    padding-left: 10px;
+    color: #676767;
+}
+
 
 @media screen and (max-width: 610px){
     .menu-wrap{

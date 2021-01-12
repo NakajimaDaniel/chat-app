@@ -9,7 +9,7 @@ import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
 import SendIcon from '@material-ui/icons/Send';
 import IconButton from '@material-ui/core/IconButton';
-
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment } from '@fortawesome/free-solid-svg-icons';
@@ -21,7 +21,7 @@ function App() {
 
   const [messageList, setMessageList] = useState([]);
 
-  const commentIcon = <FontAwesomeIcon icon={faComment} color='#474747'/>
+  const commentIcon = <FontAwesomeIcon icon={faComment} color='#3C6890'/>
 
   const messageBoxStyle = {
     backgroundColor: "#E7E7E7",
@@ -32,6 +32,11 @@ function App() {
   const buttonSend = {
     backgroundColor:"#8EAEFF",
 
+  }
+
+  const userIcon = {
+    color: '#C4C4C4',
+    fontSize:'50px'
   }
 
   const onChangeInput = (e)=>{
@@ -76,6 +81,15 @@ function App() {
 
         <div className="divider">
 
+        </div>
+
+        <div className="participants-wrap">
+          <div className="user-img">
+            <AccountCircleIcon style={userIcon}/>
+          </div>
+          <div className="user-name">
+            User1
+          </div>
         </div>
 
       </div>
