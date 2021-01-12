@@ -11,8 +11,8 @@
 }
 
 .menu-wrap{
-    width: 35vh;
-    background:#E1E1E1;
+    width: 30vh;
+    background:#f2eaee;
     flex-shrink: 0;
 }
 
@@ -25,16 +25,17 @@
 
 .message-list{
     background: #CEFFFC;
-    height: 95vh;
-    max-height: 95%;
-    overflow-y:scroll;
-    flex-shrink: 0;
+    height: 93vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .message-input{
     width: 100%;
     background: white;
-    height: 5vh;
+    height: 7vh;
     text-align: center;  
     display: flex;
     flex-flow: row wrap;
@@ -43,7 +44,6 @@
 
 .message-input TextField{
     width: 90%;
-
     border: 0.2px solid black;
     background: #E7E7E7;
     border-radius: 20px;
@@ -54,11 +54,58 @@
 .message{
     background: #8EAEFF;
     overflow-x:hidden;
-    width: fit-content; 
     margin: 10px 10px;
     padding: 10px 10px;
     border-radius: 10px;
-    max-width: 10%;
-    margin-left: auto; 
+    width: fit-content;
     word-wrap: break-word;
+    word-break:break-all;
+    flex-shrink: 0;
+    margin-left: 10vh;
+}
+
+
+.menu-title{
+    font-size: 23px;
+    text-align: center;
+    color: #676767;
+    padding-top: 30px;
+    background-color:#9DBFF2;
+    padding-bottom: 30px;
+    border-radius: 0px 0px 30px 30px;
+}
+
+
+.room-data{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.room-name{
+    color: #676767;
+}
+
+.room-password{
+    color: #676767;
+}
+
+.divider{
+    text-align: center;
+    background-color:#C4C4C4;
+    padding-top: 2px;
+    width: 20vh;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 610px){
+    .menu-wrap{
+        width: 20vh;
+    }
+
+}
+@media screen and (max-width: 515px){
+    .menu-wrap{
+        width: 15vh;
+    }
+
 }
